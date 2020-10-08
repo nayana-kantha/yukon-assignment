@@ -1,0 +1,45 @@
+<app-spinner *ngIf="showSpinner"></app-spinner>
+<div class="container mt-4 mb-4">
+    <div class="row">
+        <h1 class="col-12">
+            Assignment - Yukon
+        </h1>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <app-error-handle *ngIf="isError"></app-error-handle>
+        </div>
+    </div>
+    <div class="row" *ngIf="!isError">
+        <div class="col-12" >
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Body</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let tableItem of tableData">
+                    <td>{{tableItem.id}}</td>
+                    <td>{{tableItem.title}}</td>
+                    <td title="{{tableItem.body}}">{{tableItem.body | slice:0:100}}</td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row" *ngIf="!isError">
+        <div class="col-4">
+            <app-data-table-rows-per-page [fullDataSet]="fullDataSet" (noOfRowsPerPage)="onChangRow($event)"></app-data-table-rows-per-page>
+        </div>
+        <div class="col-8">
+            <app-data-table-pagination [paginationData]="paginationData" (clickedPaginationItem)="onClickPagination($event)" [activatePaginator]="activatePaginator"></app-data-table-pagination>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>
+
+
+

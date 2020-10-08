@@ -1,0 +1,8 @@
+<div class="clearfix row-page-wrapper">
+    <label class="float-left">Entries per table</label> 
+    <select (change)="onChangRow($event.target.value)" [(ngModel)]="defaultRowsPerPage" class="form-control float-left"> 
+        <option value="{{row}}" *ngFor="let row of rowsPerPage">{{row}}</option>
+        <option value="{{fullDataSet?.length}}">all</option>
+    </select>
+</div>
+

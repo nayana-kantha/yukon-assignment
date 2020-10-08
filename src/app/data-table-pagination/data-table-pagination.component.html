@@ -1,0 +1,13 @@
+<nav class="float-right">
+    <ul class="pagination" >
+        <li class="page-item">
+            <a class="page-link" (click)="onClickFirst()">First</a>
+        </li>
+        <li class="page-item" [ngClass]="{'active': activatePaginator === i}" *ngFor="let item of paginationData; let i = index">
+            <a class="page-link" (click)="onClickPagination(i)">{{i+1}}</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" (click)="onClickLast()">Last</a>
+        </li>
+    </ul>
+</nav>

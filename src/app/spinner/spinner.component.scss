@@ -1,0 +1,16 @@
+.loader-wrapper{
+    position: fixed;
+    z-index: 10;
+    background: #fff;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    .loader{
+        text-align: center;
+        .preloader-wrp{
+            display:inline-block;
+            margin-top: 40vh;
+        }
+    }
+}
